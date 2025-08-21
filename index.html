@@ -785,6 +785,7 @@
     
     const cssPath = "https://xun-04.github.io/waifu/waifu.css";
     const tipsJsonPath = "https://xun-04.github.io/waifu/waifu-tips.json";
+    const tipsJsPath = "https://xun-04.github.io/waifu/waifu-tips.js";
 
     
     const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
@@ -821,7 +822,7 @@
             initWidget({
                 waifuPath: tipsJsonPath,
                 cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
-                tools: ["hitokoto", "asteroids", "switch-model", "photo", "info", "quit"]
+                tools: ["hitokoto", "asteroids", "photo", "info", "quit"]
             });
         });
     }
@@ -855,7 +856,7 @@
             } else if (currentLeft > window.innerWidth - 300) {
                 currentLeft = window.innerWidth - 300;
             }
-            waifu.style.left = currentLeft + "px";
+            waifu.style.left = currentLeft  + "px";
             
             
             
