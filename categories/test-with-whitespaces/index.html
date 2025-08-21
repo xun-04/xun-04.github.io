@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+
+<head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="欢迎来到xunxun的网站，主要分享各种资源和学习笔记。">
 <title>Category: Test With Whitespaces - Xunxun</title>
 
@@ -15,8 +16,9 @@
 <meta name="twitter:description" content="欢迎来到xunxun的网站，主要分享各种资源和学习笔记。"><link rel="alternate" type="application/rss&#43;xml" href="https://xun-04.github.io/categories/test-with-whitespaces/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
 
-    </head>
-    <body class="">
+</head>
+
+<body class="">
     <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -367,7 +369,7 @@
     </aside>
 
 
-            <main class="main full-width">
+        <main class="main full-width">
     <header>
         <h3 class="section-title">
             
@@ -409,9 +411,9 @@
     </section>
 
 
-            </main>
-        </div>
-        <script 
+        </main>
+    </div>
+    <script 
                 src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
                 
                 >
@@ -430,8 +432,11 @@
 
 <script>
     
-    const cssPath = "https://xun-04.github.io/waifu/waifu.css"
-    const tipsJsonPath = "https://xun-04.github.io/waifu/waifu-tips.json"
+    const cssPath = "https://xun-04.github.io/waifu/waifu.css";
+    const tipsJsonPath = "https://xun-04.github.io/waifu/waifu-tips.json";
+    const live2dMinJsPath = "https://xun-04.github.io/waifu/live2d.min.js";
+    const tipsJsPath = "https://xun-04.github.io/waifu/waifu-tips.js";
+
     
     const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
 
@@ -460,17 +465,63 @@
     if (screen.width >= 768) {
         Promise.all([
             loadExternalResource(cssPath, "css"),
-            loadExternalResource(live2d_path + "live2d.min.js", "js"),
-            loadExternalResource(live2d_path + "waifu-tips.js", "js")
+            loadExternalResource(live2dMinJsPath, "js"),
+            loadExternalResource(tipsJsPath, "js")
         ]).then(() => {
             
             initWidget({
                 waifuPath: tipsJsonPath,
-                cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
-                tools: ["hitokoto", "asteroids", "switch-model", "switch-texture", "photo", "info", "quit"]
+                cdnPath: "https://fastly.jsdelivr.net/gh/xun-04/live2d-widget@v1.0.0",
+                tools: ["hitokoto", "asteroids", "switch-model", "photo", "info", "quit"]
             });
         });
     }
+
+    function initWaifuMouseEvent() {
+        const waifu = document.getElementById("waifu");
+        let isDown = false;
+        let waifuLeft;
+        let mouseLeft;
+        let waifuTop;
+        let mouseTop;
+        
+        waifu.onmousedown = function (e) {
+            isDown = true;
+            
+            waifuLeft = waifu.offsetLeft;
+            mouseLeft = e.clientX;
+            
+            waifuTop = waifu.offsetTop;
+            mouseTop = e.clientY;
+        }
+        
+        window.onmousemove = function (e) {
+            if (!isDown) {
+                return;
+            }
+            
+            let currentLeft = waifuLeft + (e.clientX - mouseLeft);
+            if (currentLeft < 0) {
+                currentLeft = 0;
+            } else if (currentLeft > window.innerWidth - 300) {
+                currentLeft = window.innerWidth - 300;
+            }
+            waifu.style.left = currentLeft + "px";
+            
+            
+            
+            
+            
+            
+            
+            
+        }
+        
+        window.onmouseup = function (e) {
+            isDown = false;
+        }
+    }
 </script>
-    </body>
+</body>
+
 </html>
