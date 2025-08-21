@@ -485,8 +485,6 @@
     
     const cssPath = "https://xun-04.github.io/waifu/waifu.css";
     const tipsJsonPath = "https://xun-04.github.io/waifu/waifu-tips.json";
-    const live2dMinJsPath = "https://xun-04.github.io/waifu/live2d.min.js";
-    const tipsJsPath = "https://xun-04.github.io/waifu/waifu-tips.js";
 
     
     const live2d_path = "https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/";
@@ -516,13 +514,13 @@
     if (screen.width >= 768) {
         Promise.all([
             loadExternalResource(cssPath, "css"),
-            loadExternalResource(live2dMinJsPath, "js"),
-            loadExternalResource(tipsJsPath, "js")
+            loadExternalResource(live2d_path + "live2d.min.js", "js"),
+            loadExternalResource(live2d_path + "waifu-tips.js", "js")
         ]).then(() => {
             
             initWidget({
                 waifuPath: tipsJsonPath,
-                cdnPath: "https://cdn.jsdelivr.net/gh/xun-04/live2d-widget@v1.0.0/",
+                cdnPath: "https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/",
                 tools: ["hitokoto", "asteroids", "switch-model", "photo", "info", "quit"]
             });
         });
@@ -581,6 +579,7 @@
     background-attachment: fixed;
   }
 </style>
+
 
 <script src=https://xun-04.github.io/background/sakura.js></script>
 </body>

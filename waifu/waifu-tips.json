@@ -61,7 +61,7 @@
       ]
     },
     {
-      "selector": ".icon icon-tabler icon-tabler-home",
+      "selector": ".current",
       "text": [
         "点击前往首页，想回到上一页可以使用浏览器的后退功能哦。",
         "点它就可以回到首页啦！",
