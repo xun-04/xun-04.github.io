@@ -7,7 +7,88 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>又是一年春</copyright>
-        <lastBuildDate>Sat, 23 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xun-04.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 27 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://xun-04.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Jupyter Notebook &amp; Vscode</title>
+        <link>https://xun-04.github.io/p/jupyter-notebook-vscode/</link>
+        <pubDate>Wed, 27 Aug 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://xun-04.github.io/p/jupyter-notebook-vscode/</guid>
+        <description>&lt;h2 id=&#34;安装-jupyternotebook&#34;&gt;安装 Jupyternotebook
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;完整版
+&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/717638247&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;知乎完整教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/pxyp123/article/details/123262779&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN_plug&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;速通版&amp;mdash;Anaconda Prompt
+&lt;ol&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://mirrors.tuna.tsinghua.edu.cn/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Anaconda&lt;/a&gt; install: Anaconda3-2023.09-0-Windows-x86_64.exe&lt;/li&gt;
+&lt;li&gt;change channels
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-Python&#34; data-lang=&#34;Python&#34;&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge 
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn
+conda config --set show_channel_urls yes    			# 设置搜索时显示通道地址
+conda config --show channels							  # 查看是否修改好通道
+  ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Plug
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;conda&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;forge&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jupyter_contrib_nbextensions&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;conda&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;conda&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;forge&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jupyter_nbextensions_configurator&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;# 安装插件管理包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;jupyter&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nbextensions_configurator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;enable&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;jupyter&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nbextensions_configurator&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;jupyter&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;contrib&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nbextension&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;install&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;user&lt;/span&gt;						  &lt;span class=&#34;c1&#34;&gt;# 安装一些插件并启用插件管理器&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;推荐插件：
+&lt;img src=&#34;https://xun-04.github.io/p/jupyter-notebook-vscode/JupyterNotebook_plug.jpg&#34;
+	width=&#34;1902&#34;
+	height=&#34;804&#34;
+	srcset=&#34;https://xun-04.github.io/p/jupyter-notebook-vscode/JupyterNotebook_plug_hu_464abb13e6b01141.jpg 480w, https://xun-04.github.io/p/jupyter-notebook-vscode/JupyterNotebook_plug_hu_eb90ddc03c45312c.jpg 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Plug_self&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;236&#34;
+		data-flex-basis=&#34;567px&#34;
+	
+&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;vscode&#34;&gt;Vscode
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;懒得写了，自己看吧&amp;hellip; &lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43679228/article/details/147256251&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CSDN 教程&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>Account_sign_in</title>
         <link>https://xun-04.github.io/p/account_sign_in/</link>
         <pubDate>Sat, 23 Aug 2025 00:00:00 +0000</pubDate>
